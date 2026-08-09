@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="display-and-sort" page-range-format="chicago">
   <info>
-    <title>Universitas PTIQ Jakarta (Chicago Manual of Style Modified)</title>
-    <title-short>PTIQ Jakarta</title-short>
-    <id>http://www.zotero.org/styles/ptiq-jakarta</id>
-    <link href="http://www.zotero.org/styles/ptiq-jakarta" rel="self"/>
+    <title>Universitas PTIQ Jakarta</title>
+    <title-short>PTIQ</title-short>
+    <id>http://www.zotero.org/styles/universitas-ptiq-jakarta</id>
+    <link href="http://www.zotero.org/styles/universitas-ptiq-jakarta" rel="self"/>
     <link href="http://www.chicagomanualofstyle.org/tools_citationguide.html" rel="documentation"/>
     <author>
-      <name>nurr_ree</name>
+      <name>Nur Ardhiansyah</name>
     </author>
+    <contributor>
+      <name>nurr_ree</name>
+    </contributor>
     <category citation-format="note"/>
     <category field="generic-base"/>
-    <summary>Format sitasi untuk penulisan tesis dan disertasi Pascasarjana Universitas PTIQ Jakarta berdasarkan Chicago Manual of Style dengan modifikasi lokal. Dikembangkan oleh nurr_ree.</summary>
-    <updated>2025-12-27T00:45:00+07:00</updated>
+    <summary>Format sitasi untuk penulisan tesis dan disertasi Pascasarjana Universitas PTIQ Jakarta. V26: Conference proceedings bibliography kembali memakai "dalam" agar seragam dengan footnote. V25: (a) Book section — hapus &quot;dalam&quot; ganda, kini satu &quot;dalam&quot; + editor (ed.) opsional + judul; titik setelah judul buku sebelum tempat di bibliography; (b) Book bibliography — titik setelah judul; (c) Conference proceedings bibliography — hapus &quot;dalam&quot; &amp; tempat/penerbit, pakai Tahun. V24: chapter &quot;dalam&quot;, koma subsequent, t.th. V23: proceeding dipisah; nama lengkap subsequent. Compatible dengan Mendeley Desktop dan Zotero.</summary>
+    <updated>2026-08-09T10:30:00+07:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
 
-  <!-- Lokalisasi Bahasa Indonesia -->
   <locale xml:lang="id">
     <terms>
       <term name="editor" form="verb-short">ed.</term>
@@ -25,7 +27,7 @@
       <term name="translator" form="short">terj.</term>
       <term name="editortranslator" form="verb-short">ed. dan terj.</term>
       <term name="and">dan</term>
-      <term name="et-al">et.al.</term>
+      <term name="et-al">et al.</term>
       <term name="page" form="short">hal.</term>
       <term name="page" form="long">halaman</term>
       <term name="in">dalam</term>
@@ -46,25 +48,27 @@
       <term name="editor" form="verb-short">ed.</term>
       <term name="translator" form="verb-short">trans.</term>
       <term name="editortranslator" form="verb-short">ed. and trans.</term>
-      <term name="et-al">et.al.</term>
+      <term name="et-al">et al.</term>
+      <term name="volume" form="short">Vol.</term>
     </terms>
     <style-options punctuation-in-quote="true"/>
   </locale>
 
-  <!-- MACROS FOR FOOTNOTE -->
   <macro name="contributors-note">
     <names variable="author" suffix=",">
       <name and="text" delimiter=", " delimiter-precedes-et-al="always"/>
-      <et-al term="et-al" font-style="italic" prefix=", "/>
+      <et-al term="et-al" font-style="italic"/>
       <label form="short" prefix=", "/>
       <substitute>
         <names variable="editor" suffix=",">
           <name and="text" delimiter=", " delimiter-precedes-et-al="always"/>
-          <et-al term="et-al" font-style="italic" prefix=", "/>
+          <et-al term="et-al" font-style="italic"/>
+          <label form="short" prefix=" (" suffix=")"/>
         </names>
         <names variable="translator" suffix=",">
           <name and="text" delimiter=", " delimiter-precedes-et-al="always"/>
-          <et-al term="et-al" font-style="italic" prefix=", "/>
+          <et-al term="et-al" font-style="italic"/>
+          <label form="short" prefix=" (" suffix=")"/>
         </names>
         <text macro="title-note"/>
       </substitute>
@@ -73,37 +77,38 @@
 
   <macro name="contributors-short">
     <names variable="author" suffix=",">
-      <name form="short" and="text" delimiter=", " delimiter-precedes-et-al="always"/>
-      <et-al term="et-al" font-style="italic" prefix=", "/>
+      <name form="long" and="text" delimiter=", " delimiter-precedes-et-al="always"/>
+      <et-al term="et-al" font-style="italic"/>
       <substitute>
         <names variable="editor" suffix=",">
-          <name form="short" and="text" delimiter=", " delimiter-precedes-et-al="always"/>
-          <et-al term="et-al" font-style="italic" prefix=", "/>
+          <name form="long" and="text" delimiter=", " delimiter-precedes-et-al="always"/>
+          <et-al term="et-al" font-style="italic"/>
+          <label form="short" prefix=" (" suffix=")"/>
         </names>
         <names variable="translator" suffix=",">
-          <name form="short" and="text" delimiter=", " delimiter-precedes-et-al="always"/>
-          <et-al term="et-al" font-style="italic" prefix=", "/>
+          <name form="long" and="text" delimiter=", " delimiter-precedes-et-al="always"/>
+          <et-al term="et-al" font-style="italic"/>
+          <label form="short" prefix=" (" suffix=")"/>
         </names>
         <text macro="title-short"/>
       </substitute>
     </names>
   </macro>
 
-  <!-- MACROS FOR BIBLIOGRAPHY -->
   <macro name="contributors">
-    <names variable="author" suffix=",">
+    <names variable="author" suffix=".">
       <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" delimiter-precedes-et-al="always"/>
-      <et-al term="et-al" font-style="italic" prefix=", "/>
+      <et-al term="et-al" font-style="italic"/>
       <label form="short" prefix=" "/>
       <substitute>
-        <names variable="editor" suffix=",">
+        <names variable="editor" suffix=".">
           <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" delimiter-precedes-et-al="always"/>
-          <et-al term="et-al" font-style="italic" prefix=", "/>
+          <et-al term="et-al" font-style="italic"/>
           <label form="short" prefix=" (" suffix=")"/>
         </names>
-        <names variable="translator" suffix=",">
+        <names variable="translator" suffix=".">
           <name name-as-sort-order="first" and="text" sort-separator=", " delimiter=", " delimiter-precedes-last="always" delimiter-precedes-et-al="always"/>
-          <et-al term="et-al" font-style="italic" prefix=", "/>
+          <et-al term="et-al" font-style="italic"/>
           <label form="short" prefix=" (" suffix=")"/>
         </names>
         <text macro="title"/>
@@ -115,18 +120,18 @@
     <names variable="editor translator" delimiter=", ">
       <label form="verb-short" suffix=" "/>
       <name and="text" delimiter=", " delimiter-precedes-et-al="always"/>
-      <et-al term="et-al" font-style="italic" prefix=", "/>
+      <et-al term="et-al" font-style="italic"/>
     </names>
   </macro>
 
   <macro name="container-contributors-note">
     <choose>
-      <if type="chapter paper-conference entry-dictionary entry-encyclopedia" match="any">
+      <if type="chapter-DISABLED" match="any">
         <group delimiter=" ">
           <text term="in"/>
           <names variable="editor translator" delimiter=", ">
             <name and="text" delimiter=", " delimiter-precedes-et-al="always"/>
-            <et-al term="et-al" font-style="italic" prefix=", "/>
+            <et-al term="et-al" font-style="italic"/>
             <label form="short" prefix=" (" suffix=")"/>
           </names>
         </group>
@@ -134,14 +139,46 @@
     </choose>
   </macro>
 
+  <macro name="chapter-container-note">
+    <group delimiter=" ">
+      <text term="in"/>
+      <choose>
+        <if variable="editor translator" match="any">
+          <names variable="editor translator" delimiter=", ">
+            <name and="text" delimiter=", " delimiter-precedes-et-al="always"/>
+            <et-al term="et-al" font-style="italic"/>
+            <label form="short" prefix=" (" suffix=")"/>
+          </names>
+        </if>
+      </choose>
+      <text variable="container-title" font-style="italic"/>
+    </group>
+  </macro>
+
+  <macro name="chapter-container">
+    <group delimiter=" ">
+      <text term="in"/>
+      <choose>
+        <if variable="editor translator" match="any">
+          <names variable="editor translator" delimiter=", ">
+            <name and="text" delimiter=", " delimiter-precedes-et-al="always"/>
+            <et-al term="et-al" font-style="italic"/>
+            <label form="short" prefix=" (" suffix=")"/>
+          </names>
+        </if>
+      </choose>
+      <text variable="container-title" font-style="italic"/>
+    </group>
+  </macro>
+
   <macro name="container-contributors">
     <choose>
-      <if type="chapter paper-conference entry-dictionary entry-encyclopedia" match="any">
+      <if type="chapter-DISABLED" match="any">
         <group delimiter=" ">
           <text term="in" text-case="capitalize-first"/>
           <names variable="editor translator" delimiter=", ">
             <name and="text" delimiter=", " delimiter-precedes-et-al="always"/>
-            <et-al term="et-al" font-style="italic" prefix=", "/>
+            <et-al term="et-al" font-style="italic"/>
             <label form="short" prefix=" (" suffix=")"/>
           </names>
         </group>
@@ -221,7 +258,10 @@
         </group>
       </if>
       <else-if type="chapter paper-conference entry-dictionary entry-encyclopedia" match="any">
-        <text variable="container-title" font-style="italic"/>
+        <group delimiter=" ">
+          <text term="in"/>
+          <text variable="container-title" font-style="italic"/>
+        </group>
       </else-if>
       <else-if type="webpage post-weblog" match="any">
         <text variable="container-title"/>
@@ -241,7 +281,10 @@
         </group>
       </if>
       <else-if type="chapter paper-conference entry-dictionary entry-encyclopedia" match="any">
-        <text variable="container-title" font-style="italic"/>
+        <group delimiter=" ">
+          <text term="in"/>
+          <text variable="container-title" font-style="italic"/>
+        </group>
       </else-if>
       <else-if type="webpage post-weblog" match="any">
         <text variable="container-title"/>
@@ -277,6 +320,36 @@
       <else>
         <text variable="edition"/>
       </else>
+    </choose>
+  </macro>
+
+  <macro name="volume-book-note">
+    <choose>
+      <if type="book" match="any">
+        <choose>
+          <if variable="volume">
+            <group delimiter=" ">
+              <text value="vol."/>
+              <text variable="volume"/>
+            </group>
+          </if>
+        </choose>
+      </if>
+    </choose>
+  </macro>
+
+  <macro name="volume-book">
+    <choose>
+      <if type="book" match="any">
+        <choose>
+          <if variable="volume">
+            <group delimiter=" ">
+              <text value="vol."/>
+              <text variable="volume"/>
+            </group>
+          </if>
+        </choose>
+      </if>
     </choose>
   </macro>
 
@@ -356,6 +429,11 @@
             <label variable="locator" form="short" suffix=" "/>
           </if>
           <else>
+            <choose>
+              <if type="book">
+                <text macro="volume-book-note" prefix=", "/>
+              </if>
+            </choose>
             <text term="page" form="short" prefix=", " suffix=" "/>
           </else>
         </choose>
@@ -363,6 +441,9 @@
       </if>
       <else-if type="chapter paper-conference article-journal article-magazine article-newspaper" match="any">
         <text variable="page" prefix=", hal. "/>
+      </else-if>
+      <else-if type="book">
+        <text macro="volume-book-note" prefix=", "/>
       </else-if>
     </choose>
   </macro>
@@ -391,21 +472,88 @@
     </choose>
   </macro>
 
+  <macro name="subsequent-tail-book">
+    <choose>
+      <if variable="volume">
+        <text value=" …, "/>
+        <text macro="volume-book-note"/>
+      </if>
+    </choose>
+  </macro>
+
+  <macro name="subsequent-tail-general">
+    <choose>
+      <if variable="page">
+        <text value=", …"/>
+        <text variable="page" prefix=", hal. "/>
+      </if>
+    </choose>
+  </macro>
+
   <macro name="publisher">
     <choose>
       <if type="thesis">
         <group delimiter=": ">
-          <text variable="publisher-place"/>
-          <text variable="publisher"/>
+          <choose>
+            <if variable="publisher-place">
+              <text variable="publisher-place"/>
+            </if>
+            <else>
+              <text value="t.tp."/>
+            </else>
+          </choose>
+          <choose>
+            <if variable="publisher">
+              <text variable="publisher"/>
+            </if>
+            <else>
+              <text value="t.p."/>
+            </else>
+          </choose>
         </group>
       </if>
       <else-if type="speech">
-        <text variable="event-place"/>
+        <choose>
+          <if variable="event-place">
+            <text variable="event-place"/>
+          </if>
+          <else>
+            <text value="t.tp."/>
+          </else>
+        </choose>
       </else-if>
       <else>
         <group delimiter=": ">
-          <text variable="publisher-place"/>
-          <text variable="publisher"/>
+          <choose>
+            <if variable="publisher-place">
+              <text variable="publisher-place"/>
+            </if>
+            <else>
+              <text value="t.tp."/>
+            </else>
+          </choose>
+          <choose>
+            <if variable="publisher">
+              <text variable="publisher"/>
+            </if>
+            <else>
+              <text value="t.p."/>
+            </else>
+          </choose>
+        </group>
+      </else>
+    </choose>
+  </macro>
+
+  <macro name="publisher-year-combined">
+    <choose>
+      <if variable="publisher-place publisher issued" match="none">
+        <text value="(t.d.)"/>
+      </if>
+      <else>
+        <group delimiter=", ">
+          <text macro="publisher"/>
+          <text macro="issued"/>
         </group>
       </else>
     </choose>
@@ -496,17 +644,13 @@
     </choose>
   </macro>
 
-  <!-- CITATION (FOOTNOTE) -->
   <citation et-al-min="3" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-names="true">
     <layout suffix="." delimiter="; ">
       <choose>
-        <!-- IBID (dengan atau tanpa locator) - FOOTNOTE BERURUTAN DARI REFERENCE SAMA -->
         <if position="ibid-with-locator ibid">
           <choose>
-            <!-- Jika ada locator, tampilkan dengan halaman -->
             <if variable="locator">
               <choose>
-                <!-- THESIS: tanpa koma sebelum petik tutup -->
                 <if type="thesis">
                   <group>
                     <text macro="contributors-short"/>
@@ -517,18 +661,17 @@
                     <text variable="locator"/>
                   </group>
                 </if>
-                <!-- BOOK: koma setelah judul italic -->
                 <else-if type="book">
                   <group>
                     <text macro="contributors-short"/>
                     <text value=" "/>
                     <text variable="title" form="short" font-style="italic" suffix=","/>
                     <text value=" …, "/>
+                    <text macro="volume-book-note" suffix=", "/>
                     <text term="page" form="short" suffix=" "/>
                     <text variable="locator"/>
                   </group>
                 </else-if>
-                <!-- ARTICLE: koma dalam petik -->
                 <else>
                   <group>
                     <text macro="contributors-short"/>
@@ -541,48 +684,39 @@
                 </else>
               </choose>
             </if>
-            <!-- Jika TIDAK ada locator, tampilkan tanpa halaman -->
             <else>
               <choose>
-                <!-- THESIS: tanpa koma sebelum petik tutup -->
                 <if type="thesis">
                   <group>
                     <text macro="contributors-short"/>
                     <text value=" "/>
                     <text variable="title" form="short" quotes="true"/>
-                    <text value=" …."/>
                   </group>
                 </if>
-                <!-- BOOK: koma setelah judul italic -->
                 <else-if type="book">
                   <group>
                     <text macro="contributors-short"/>
                     <text value=" "/>
-                    <text variable="title" form="short" font-style="italic" suffix=","/>
-                    <text value=" …."/>
+                    <text variable="title" form="short" font-style="italic"/>
+                    <text macro="subsequent-tail-book"/>
                   </group>
                 </else-if>
-                <!-- ARTICLE: koma dalam petik -->
                 <else>
                   <group>
                     <text macro="contributors-short"/>
                     <text value=" "/>
-                    <text variable="title" form="short" quotes="true" suffix=","/>
-                    <text value=" …."/>
+                    <text variable="title" form="short" quotes="true"/>
+                    <text macro="subsequent-tail-general"/>
                   </group>
                 </else>
               </choose>
             </else>
           </choose>
         </if>
-
-        <!-- SUBSEQUENT (reference sudah pernah dikutip sebelumnya tapi TIDAK berurutan) -->
         <else-if position="subsequent">
           <choose>
-            <!-- Jika ada locator, tampilkan dengan halaman -->
             <if variable="locator">
               <choose>
-                <!-- THESIS: tanpa koma sebelum petik tutup -->
                 <if type="thesis">
                   <group>
                     <text macro="contributors-short"/>
@@ -593,18 +727,17 @@
                     <text variable="locator"/>
                   </group>
                 </if>
-                <!-- BOOK: koma setelah judul italic -->
                 <else-if type="book">
                   <group>
                     <text macro="contributors-short"/>
                     <text value=" "/>
                     <text variable="title" form="short" font-style="italic" suffix=","/>
                     <text value=" …, "/>
+                    <text macro="volume-book-note" suffix=", "/>
                     <text term="page" form="short" suffix=" "/>
                     <text variable="locator"/>
                   </group>
                 </else-if>
-                <!-- ARTICLE: koma dalam petik -->
                 <else>
                   <group>
                     <text macro="contributors-short"/>
@@ -617,71 +750,65 @@
                 </else>
               </choose>
             </if>
-            <!-- Jika TIDAK ada locator, tampilkan tanpa halaman -->
             <else>
               <choose>
-                <!-- THESIS: tanpa koma sebelum petik tutup -->
                 <if type="thesis">
                   <group>
                     <text macro="contributors-short"/>
                     <text value=" "/>
                     <text variable="title" form="short" quotes="true"/>
-                    <text value=" …."/>
                   </group>
                 </if>
-                <!-- BOOK: koma setelah judul italic -->
                 <else-if type="book">
                   <group>
                     <text macro="contributors-short"/>
                     <text value=" "/>
-                    <text variable="title" form="short" font-style="italic" suffix=","/>
-                    <text value=" …."/>
+                    <text variable="title" form="short" font-style="italic"/>
+                    <text macro="subsequent-tail-book"/>
                   </group>
                 </else-if>
-                <!-- ARTICLE: koma dalam petik -->
                 <else>
                   <group>
                     <text macro="contributors-short"/>
                     <text value=" "/>
-                    <text variable="title" form="short" quotes="true" suffix=","/>
-                    <text value=" …."/>
+                    <text variable="title" form="short" quotes="true"/>
+                    <text macro="subsequent-tail-general"/>
                   </group>
                 </else>
               </choose>
             </else>
           </choose>
         </else-if>
-
-        <!-- FIRST CITATION -->
         <else>
           <choose>
-            <!-- BOOK -->
             <if type="book">
               <text macro="contributors-note"/>
               <text value=" "/>
               <text macro="title-note" suffix=", "/>
               <text macro="editor-translator" suffix=", "/>
               <text macro="edition-note" suffix=", "/>
-              <text macro="publisher" suffix=", "/>
-              <text macro="issued"/>
+              <text macro="publisher-year-combined"/>
               <text macro="point-locators"/>
             </if>
-
-            <!-- CHAPTER -->
-            <else-if type="chapter paper-conference entry-dictionary entry-encyclopedia" match="any">
+            <else-if type="paper-conference">
               <text macro="contributors-note"/>
               <text value=" "/>
               <text macro="title-note" suffix=", "/>
-              <text macro="container-contributors-note"/>
+              <text term="in"/>
               <text value=" "/>
-              <text macro="container-title-note" suffix=", "/>
-              <text macro="edition-note" suffix=", "/>
-              <text macro="publisher" suffix=", "/>
-              <text macro="issued"/>
+              <text variable="container-title" font-style="italic" suffix=", "/>
+              <text macro="issued-year" prefix="Tahun "/>
               <text macro="point-locators"/>
             </else-if>
-
-            <!-- JOURNAL ARTICLE -->
+            <else-if type="chapter entry-dictionary entry-encyclopedia" match="any">
+              <text macro="contributors-note"/>
+              <text value=" "/>
+              <text macro="title-note" suffix=", "/>
+              <text macro="chapter-container-note" suffix=", "/>
+              <text macro="edition-note" suffix=", "/>
+              <text macro="publisher-year-combined"/>
+              <text macro="point-locators"/>
+            </else-if>
             <else-if type="article-journal">
               <text macro="contributors-note"/>
               <text value=" "/>
@@ -690,8 +817,6 @@
               <text macro="locators-note-journal"/>
               <text macro="point-locators"/>
             </else-if>
-
-            <!-- MAGAZINE ARTICLE -->
             <else-if type="article-magazine">
               <text macro="contributors-note"/>
               <text value=" "/>
@@ -703,8 +828,6 @@
               <text macro="issued"/>
               <text macro="point-locators"/>
             </else-if>
-
-            <!-- NEWSPAPER ARTICLE -->
             <else-if type="article-newspaper">
               <text macro="contributors-note"/>
               <text value=" "/>
@@ -716,35 +839,27 @@
               <text macro="issued"/>
               <text macro="point-locators"/>
             </else-if>
-
-            <!-- THESIS -->
             <else-if type="thesis">
               <text macro="contributors-note"/>
               <text value=" "/>
               <text macro="title-note"/>
               <text value=" "/>
               <text macro="genre-note" suffix=". "/>
-              <text macro="publisher" suffix=", "/>
-              <text macro="issued"/>
+              <text macro="publisher-year-combined"/>
               <text macro="point-locators"/>
             </else-if>
-
-            <!-- WEBPAGE -->
             <else-if type="webpage post-weblog" match="any">
               <text macro="contributors-note"/>
               <text value=" "/>
               <text macro="title-note" suffix=", "/>
               <text macro="access-note"/>
             </else-if>
-
-            <!-- DEFAULT -->
             <else>
               <text macro="contributors-note"/>
               <text value=" "/>
               <text macro="title-note" suffix=", "/>
               <text macro="container-title-note" suffix=", "/>
-              <text macro="publisher" suffix=", "/>
-              <text macro="issued"/>
+              <text macro="publisher-year-combined"/>
               <text macro="point-locators"/>
             </else>
           </choose>
@@ -753,8 +868,7 @@
     </layout>
   </citation>
 
-  <!-- BIBLIOGRAPHY (DAFTAR PUSTAKA) -->
-  <bibliography hanging-indent="true" et-al-min="3" et-al-use-first="1" subsequent-author-substitute="-------" entry-spacing="0">
+  <bibliography hanging-indent="true" et-al-min="4" et-al-use-first="1" subsequent-author-substitute="-------." entry-spacing="0">
     <sort>
       <key macro="contributors"/>
       <key variable="issued"/>
@@ -762,32 +876,33 @@
     </sort>
     <layout suffix=".">
       <choose>
-        <!-- BOOK -->
         <if type="book">
           <text macro="contributors"/>
           <text value=" "/>
-          <text macro="title" suffix=", "/>
+          <text macro="title" suffix=". "/>
           <text macro="edition" suffix=", "/>
           <text macro="editor-translator" suffix=", "/>
-          <text macro="publisher" suffix=", "/>
-          <text macro="issued"/>
+          <text macro="publisher-year-combined"/>
         </if>
-
-        <!-- CHAPTER -->
-        <else-if type="chapter paper-conference entry-dictionary entry-encyclopedia" match="any">
+        <else-if type="paper-conference">
           <text macro="contributors"/>
           <text value=" "/>
           <text macro="title" suffix=", "/>
-          <text macro="container-contributors"/>
+          <text term="in"/>
           <text value=" "/>
-          <text macro="container-title" suffix=", "/>
-          <text macro="edition" suffix=", "/>
-          <text macro="publisher" suffix=", "/>
-          <text macro="issued"/>
+          <text variable="container-title" font-style="italic" suffix=", "/>
+          <text macro="issued-year" prefix="Tahun "/>
           <text macro="pages"/>
         </else-if>
-
-        <!-- JOURNAL ARTICLE -->
+        <else-if type="chapter entry-dictionary entry-encyclopedia" match="any">
+          <text macro="contributors"/>
+          <text value=" "/>
+          <text macro="title" suffix=", "/>
+          <text macro="chapter-container" suffix=". "/>
+          <text macro="edition" suffix=", "/>
+          <text macro="publisher-year-combined"/>
+          <text macro="pages"/>
+        </else-if>
         <else-if type="article-journal">
           <text macro="contributors"/>
           <text value=" "/>
@@ -796,8 +911,6 @@
           <text macro="locators-journal"/>
           <text macro="pages"/>
         </else-if>
-
-        <!-- MAGAZINE ARTICLE -->
         <else-if type="article-magazine">
           <text macro="contributors"/>
           <text value=" "/>
@@ -808,8 +921,6 @@
           <text macro="issued-full"/>
           <text macro="pages"/>
         </else-if>
-
-        <!-- NEWSPAPER ARTICLE -->
         <else-if type="article-newspaper">
           <text macro="contributors"/>
           <text value=" "/>
@@ -820,34 +931,26 @@
           <text macro="issued-full"/>
           <text macro="pages"/>
         </else-if>
-
-        <!-- THESIS -->
         <else-if type="thesis">
           <text macro="contributors"/>
           <text value=" "/>
           <text macro="title"/>
           <text value=" "/>
           <text macro="genre" suffix=". "/>
-          <text macro="publisher" suffix=", "/>
-          <text macro="issued"/>
+          <text macro="publisher-year-combined"/>
         </else-if>
-
-        <!-- WEBPAGE -->
         <else-if type="webpage post-weblog" match="any">
           <text macro="contributors"/>
           <text value=" "/>
           <text macro="title" suffix=", "/>
           <text macro="access"/>
         </else-if>
-
-        <!-- DEFAULT -->
         <else>
           <text macro="contributors"/>
           <text value=" "/>
           <text macro="title" suffix=", "/>
           <text macro="container-title" suffix=", "/>
-          <text macro="publisher" suffix=", "/>
-          <text macro="issued"/>
+          <text macro="publisher-year-combined"/>
           <text macro="pages"/>
         </else>
       </choose>
